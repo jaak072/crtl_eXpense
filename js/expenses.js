@@ -1,4 +1,5 @@
 
+
 if(localStorage.getItem("name") === null){
     window.location.href="login.html";
 }
@@ -128,6 +129,11 @@ $('body').on('click','.del_btn',function () {
 
 //////////////////////////////////////////////////Edit////////////////////////////////////////////////////////////
 
+
+
+
+
+
 $('body').on('click','.edit_btn',function () {
     let expenseId = $(this).parents('td').attr('data-id');
     let expenseName = $(this).parents('td').attr('data-name');
@@ -137,27 +143,6 @@ $('body').on('click','.edit_btn',function () {
     let expenseTime = $(this).parents('td').attr('data-time');
     let expenseType = $(this).parents('td').attr('data-type');
 
-
-    function updateData(name, type, amount, date, time, category) {
-
-
-
-        firebase.database().ref('/users/' + user_id +'/'+ expenseId).update({
-            name: name,
-            type: type,
-            amount: amount,
-            date: date,
-            time: time,
-            category: category
-        }, function (error) {
-
-            return 0;
-
-        });
-
-        return 1;
-    }
-    
 
     console.log(expenseId, expenseName, expenseAmount, expenseCategory, expenseDate, expenseTime, expenseType)
 
@@ -177,12 +162,28 @@ $('body').on('click','.edit_btn',function () {
             let name=document.querySelector('#update_name').value
             let time= document.querySelector('#update_time').value
             let type= document.querySelector('#update_type').value
+            let response = 0;
 
-        if (name !== '' && type !== '' && amount !== '' && time !== '' && category !== '' && date !== '') {
+        if (name === '' && type === '' && amount === '' && time === '' && category === '' && date === '') {
 
-            let response = updateData(name, type, amount, date, time, category);
+            console.log("Please fill al fields")
 
-            if (response === 1){
+        } else {
+
+            firebase.database().ref('/users/' + user_id +'/'+ expenseId).update({
+                name: name,
+                type: type,
+                amount: amount,
+                date: date,
+                time: time,
+                category: category
+            },function (error) {
+
+                response = -1;
+
+            });
+
+            if (response !== -1){
 
                 $('#exampleModal').modal('hide');
 
@@ -198,12 +199,14 @@ $('body').on('click','.edit_btn',function () {
 
 
             }
-        } else {
-            alert("Please fill out all the fields");
         }
 
     })
 })
+
+
+
+
 
 
 
