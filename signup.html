@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Ctrl Expenses | Signup</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Ubuntu:ital,wght@1,400&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="log_body">
+
+<!-- header -->
+<header class="header  fixed-top bg-dark">
+    <div class="container">
+        <nav class="navbar navbar-expand-md navbar-dark p-0" >
+            <a class="navbar-brand" href="index.html">Ct&#8377;l Expense</a>
+
+            <a class="navbar-toggler d-md-none" type="button" data-toggle="collapse" href="#collapsibleNavId">
+                <span class="navbar-toggler-icon"></span>
+            </a>
+
+
+            <div class="collapse navbar-collapse" id="collapsibleNavId">
+                <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link row active" href="about.html">
+                                  <span class="fa-stack fa-lg">
+                                    <i class="fa fa-info-circle fa-stack-1x "></i>
+                                  </span>
+                            <span class="ml-n1">About Us</span>
+                        </a>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <a class="nav-link row active" href="login.html">
+                                  <span class="fa-stack fa-lg">
+                                    <i class="fa fa-user-plus fa-stack-1x "></i>
+                                  </span>
+                            <span>Sign In</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+</header>
+<!-- form for signing up -->
+<div class="mt-5  flex-grow-1 d-flex flex-column justify-content-center">
+    <div class="container">
+        <div class="form card col-md-8 col-lg-6 d my-5  mx-auto">
+            <div class="card-body p-0">
+                <div class="pt-4">
+                    <h2 class="mb-0 text-center">Sign Up</h2>
+                </div>
+            </div>
+            <div class="card-body">
+                <form id="signup" action="process/signup_validate.php" method="POST" class="mb-4" autocomplete="off">
+                    <div class="form-group">
+                        <p class="lead">Name:</p>
+                        <input spellcheck="false" type="text" name="name" class="form-control" placeholder="Name" required/>
+                    </div>
+                    <div class="form-group">
+                        <p class="lead">Email:</p>
+                        <input spellcheck="false" type="email" name="email" class="form-control" placeholder="Enter Valid Email" required/>
+                    </div>
+                    <div class="form-group">
+                        <p class="lead">Password:</p>
+                        <input type="password" minlength="6" name="password" class="form-control" placeholder="Password (Min. 6 characters)" required/>
+                    </div>
+                    <div class="form-group">
+                        <p class="lead">Phone number:</p>
+                        <input type="number" name="contact" class="form-control" placeholder="Enter Valid Phone Number (Ex: 8448444853)" required/>
+                    </div>
+                    <div>
+                        <input type="submit" class="btn-block btn mt-4 btn-info" value="Sign Up" />
+                    </div>
+                    <div class="row mb-4 px-3 mt-3"> <small class="font-weight-bold">Already have an account? <a class="text-danger " href="login.html">LogIn</a></small> </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- footer -->
+<footer class="page-footer text-center py-3 text-white">
+    <div>
+        <p>
+            Copyright&nbsp;&copy;&nbsp;Control Budget.
+            All Rights Reserved | Contact: <a href="tel:+916392660644" style="text-decoration: none" class="text-white"> +91-6392660644</a>, <a href="tel:+919310206760" style="text-decoration: none"  class="text-white"> +91-9310206760.</a></p>
+
+        </p>
+    </div>
+</footer>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+<script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.22.0/firebase-database.js"></script>
+
+<script src="js/firebase-credentials.js"></script>
+
+
+
+
+</body>
+</html>
