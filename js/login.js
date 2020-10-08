@@ -1,4 +1,4 @@
-alert('Currently, all the logging options are not working due to some disturbance, Request you to login with Google login.');
+alert('Currently, all the logging options are not working due to some disturbance, Request you to SignIn with Google SignIn or facebook SignIn.');
 document.querySelector('#google').addEventListener('click',function () {
 
     let provider = new firebase.auth.GoogleAuthProvider();
